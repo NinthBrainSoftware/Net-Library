@@ -6,6 +6,9 @@ using NinthBrainSoftware.HostedEngine.Client.Services;
 
 namespace NinthBrainSoftware.HostedEngine.Client
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class NinthBrainSuiteAPI
     {
         protected static NinthBrainSuiteService _singleton;
