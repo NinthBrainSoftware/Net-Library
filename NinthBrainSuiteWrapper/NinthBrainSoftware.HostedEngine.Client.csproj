@@ -77,20 +77,15 @@
     <Compile Include="Components\Individuals\PhoneNumber.cs" />
     <Compile Include="Components\Individuals\Individual.cs" />
     <Compile Include="Components\Individuals\EmailAddress.cs" />
+    <Compile Include="NinthBrainSuiteAPI.cs" />
     <Compile Include="Services\BaseService.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Services\CertificationService.cs" />
     <Compile Include="Services\IndividualCertificationService.cs" />
     <Compile Include="Services\IndividualService.cs" />
-    <Compile Include="Services\Interfaces\IIndividualCertificationService.cs" />
-    <Compile Include="Services\Interfaces\ICertificationService.cs" />
-    <Compile Include="Services\Interfaces\IBaseService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\Interfaces\IIndividualService.cs" />
     <Compile Include="Util\PatchRequest.cs" />
-    <Compile Include="NinthBrainSuite.cs" />
+    <Compile Include="NinthBrainSuiteService.cs" />
     <Compile Include="Exceptions\NinthBrainAPIException.cs" />
     <Compile Include="Exceptions\IllegalArgumentException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,7 +93,6 @@
     <Compile Include="Util\CUrlRequestError.cs" />
     <Compile Include="Util\CUrlResponse.cs" />
     <Compile Include="Util\Extensions.cs" />
-    <Compile Include="Util\IRestClient.cs" />
     <Compile Include="Util\MultipartBuilder.cs" />
     <Compile Include="Util\RestClient.cs" />
   </ItemGroup>

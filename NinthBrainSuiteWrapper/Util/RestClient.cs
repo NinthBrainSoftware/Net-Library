@@ -12,7 +12,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Util
     /// <summary>
     /// Class implementation of REST client.
     /// </summary>
-    public class RestClient : IRestClient
+    public class RestClient
     {
         /// <summary>
         /// Make an Http GET request.
@@ -21,9 +21,9 @@ namespace NinthBrainSoftware.HostedEngine.Client.Util
         /// <param name="accessToken">Constant Contact OAuth2 access token</param>
         /// <param name="apiKey">The API key for the application</param>
         /// <returns>The response body, http info, and error (if one exists).</returns>
-        public CUrlResponse Get(string url, string apiKey)
+        public CUrlResponse Get(string url, Configuration configuration)
         {
-            return this.HttpRequest(url, WebRequestMethods.Http.Get, apiKey, null, null);
+            return this.HttpRequest(url, WebRequestMethods.Http.Get, configuration, null, null);
         }
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Util
         /// <param name="apiKey">The API key for the application</param>
         /// <param name="data">Data to send with request.</param>
         /// <returns>The response body, http info, and error (if one exists).</returns>
-        public CUrlResponse Post(string url, string apiKey, string data)
+        public CUrlResponse Post(string url, Configuration configuration, string data)
         {
 			byte[] bytes = null;
 
@@ -44,7 +44,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Util
 				bytes = System.Text.Encoding.UTF8.GetBytes(data);
 			}
 
-            return this.HttpRequest(url, WebRequestMethods.Http.Post,  apiKey, bytes, null);
+            return this.HttpRequest(url, WebRequestMethods.Http.Post, configuration, bytes, null);
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Util
         /// <param name="apiKey">The API key for the application</param>
         /// <param name="data">Data to send with request.</param>
         /// <returns>The response body, http info, and error (if one exists).</returns>
-        public CUrlResponse Patch(string url,  string apiKey, string data)
+        public CUrlResponse Patch(string url,  Configuration configuration, string data)
         {
             byte[] bytes = null;
 
@@ -65,7 +65,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Util
                 bytes = System.Text.Encoding.UTF8.GetBytes(data);
             }
 
-            return this.HttpRequest(url, "PATCH", apiKey, bytes, null);
+            return this.HttpRequest(url, "PATCH", configuration, bytes, null);
         }
 
 		/// <summary>
@@ -76,9 +76,9 @@ namespace NinthBrainSoftware.HostedEngine.Client.Util
         /// <param name="apiKey">The API key for the application</param>
         /// <param name="data">Data to send with request.</param>
         /// <returns>The response body, http info, and error (if one exists).</returns>
-		public CUrlResponse PostMultipart(string url,  string apiKey, byte[] data)
+		public CUrlResponse PostMultipart(string url,  Configuration configuration, byte[] data)
         {
-            return this.HttpRequest(url, WebRequestMethods.Http.Post,  apiKey, data, true);
+            return this.HttpRequest(url, WebRequestMethods.Http.Post, configuration, data, true);
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Util
         /// <param name="apiKey">The API key for the application</param>
         /// <param name="data">Data to send with request.</param>
         /// <returns>The response body, http info, and error (if one exists).</returns>
-        public CUrlResponse Put(string url, string apiKey, string data)
+        public CUrlResponse Put(string url, Configuration configuration, string data)
         {
 			byte[] bytes = null;
 
@@ -99,7 +99,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Util
 				bytes = System.Text.Encoding.UTF8.GetBytes(data);
 			}
 
-            return this.HttpRequest(url, WebRequestMethods.Http.Put,  apiKey, bytes, null);
+            return this.HttpRequest(url, WebRequestMethods.Http.Put, configuration, bytes, null);
         }
 
         /// <summary>
@@ -109,19 +109,21 @@ namespace NinthBrainSoftware.HostedEngine.Client.Util
         /// <param name="accessToken">Constant Contact OAuth2 access token</param>
         /// <param name="apiKey">The API key for the application</param>
         /// <returns>The response body, http info, and error (if one exists).</returns>
-        public CUrlResponse Delete(string url, string apiKey)
+        public CUrlResponse Delete(string url, Configuration configuration)
         {
-            return this.HttpRequest(url, "DELETE", apiKey, null, null);
+            return this.HttpRequest(url, "DELETE", configuration, null, null);
         }
 
-        private CUrlResponse HttpRequest(string url, string method, string apiKey, byte[] data, bool? isMultipart)
+        private CUrlResponse HttpRequest(string url, string method, Configuration configuration, byte[] data, bool? isMultipart)
         {
             // Initialize the response
             HttpWebResponse response = null;
             string responseText = null;
             CUrlResponse urlResponse = new CUrlResponse();
 
-            var address = url;
+            var address = ""; // url;
+
+            address = string.Concat(configuration.ServiceUrl, url);
 
             //Moved apiKey to header value
             //if (!string.IsNullOrEmpty(apiKey))
@@ -145,7 +147,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Util
           
             // Add token as HTTP header
             //request.Headers.Add("Authorization", "Bearer " + accessToken);
-            request.Headers.Add("Authorization-Token", apiKey);
+            request.Headers.Add("Authorization-Token", configuration.ApiKey);
            
             if (data != null)
             {

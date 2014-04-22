@@ -14,16 +14,30 @@ namespace NinthBrainSoftware.HostedEngine.Client.Services
     /// <summary>
     /// Performs all actions pertaining to the Certifications Collection.
     /// </summary>
-    public class IndividualCertificationService : BaseService, IIndividualCertificationService
+    public class IndividualCertificationService : BaseService
     {
+
+        private Configuration configuration = null;
+        private NinthBrainSuiteService manager = null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="configuration"></param>
+        /// <param name="manager"></param>
+        public IndividualCertificationService(Configuration configuration, NinthBrainSuiteService manager)
+        {
+            this.configuration = configuration;
+            this.manager = manager;
+        }
 
         /// <summary>
         /// Get an array of individuals.
         /// </summary>
-        /// <param name="apiKey">The API key for the application</param>
+        /// <param name="configuration">The API key for the application</param>
         /// <param name="updatedSince">limit to individual certifications modified since the supplied date</param>        
         /// <returns>Returns a list of individuals.</returns>
-        public IList<IndividualCertification> GetIndividualCertifications(string apiKey, DateTime? updatedSince)
+        public IList<IndividualCertification> GetIndividualCertifications(DateTime? updatedSince)
         {
             IList<IndividualCertification> certifications = new List<IndividualCertification>();
             // Construct access URL
@@ -31,7 +45,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Services
             string url = Config.ConstructUrl("IndividualCertification/GetIndividualCertificationList", null, new object[] { "updatedSince", updatedSince.ToString() });
 
             // Get REST response
-            CUrlResponse response = RestClient.Get(url, apiKey);
+            CUrlResponse response = RestClient.Get(url, configuration);
 
             if (response.IsError)
             {
@@ -50,20 +64,20 @@ namespace NinthBrainSoftware.HostedEngine.Client.Services
         /// <summary>
         /// Get an array of individuals.
         /// </summary>
-        /// <param name="apiKey">The API key for the application</param>
+        /// <param name="configuration">The API key for the application</param>
         /// <returns>Returns a list of individuals.</returns>
-        public IList<IndividualCertification> GetIndividualCertifications(string apiKey)
+        public IList<IndividualCertification> GetIndividualCertifications()
         {
-            return GetIndividualCertifications(apiKey, null);
+            return GetIndividualCertifications( null);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="apiKey"></param>
+        /// <param name="configuration"></param>
         /// <param name="individualCertificationId"></param>
         /// <returns></returns>
-        public IndividualCertification GetIndividualCertification(string apiKey, int individualCertificationId)
+        public IndividualCertification GetIndividualCertification(int individualCertificationId)
         {
             IndividualCertification certification = new IndividualCertification();
             // Construct access URL
@@ -71,7 +85,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Services
             string url = Config.ConstructUrl("IndividualCertification/GetIndividualCertification", null, new object[] { "individualCertificationId", individualCertificationId.ToString() });
 
             // Get REST response
-            CUrlResponse response = RestClient.Get(url, apiKey);
+            CUrlResponse response = RestClient.Get(url, configuration);
 
             if (response.IsError)
             {
@@ -87,13 +101,18 @@ namespace NinthBrainSoftware.HostedEngine.Client.Services
             return certification;
         }
 
-        public IndividualCertification Update(string apiKey, IndividualCertification individualCertification)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="individualCertification"></param>
+        /// <returns></returns>
+        public IndividualCertification Update(IndividualCertification individualCertification)
         {
             IndividualCertification updatedIndividualCertification = null;
-            string url = String.Concat(Config.Endpoints.BaseUrl, "IndividualCertification/Update");
+            string url = String.Concat(configuration, "IndividualCertification/Update");
 
             string json = individualCertification.ToJSON();
-            CUrlResponse response = RestClient.Post(url, apiKey, json);
+            CUrlResponse response = RestClient.Post(url, configuration, json);
             if (response.HasData)
             {
                 updatedIndividualCertification = Component.FromJSON<IndividualCertification>(response.Body);
@@ -107,13 +126,18 @@ namespace NinthBrainSoftware.HostedEngine.Client.Services
             return updatedIndividualCertification;
         }
 
-        public IndividualCertification Insert(string apiKey, IndividualCertification individualCertification)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="individualCertification"></param>
+        /// <returns></returns>
+        public IndividualCertification Insert(IndividualCertification individualCertification)
         {
             IndividualCertification updatedIndividualCertification = null;
-            string url = String.Concat(Config.Endpoints.BaseUrl, "IndividualCertification/Insert");
+            string url = String.Concat(configuration, "IndividualCertification/Insert");
 
             string json = individualCertification.ToJSON();
-            CUrlResponse response = RestClient.Post(url, apiKey, json);
+            CUrlResponse response = RestClient.Post(url, configuration, json);
             if (response.HasData)
             {
                 updatedIndividualCertification = Component.FromJSON<IndividualCertification>(response.Body);

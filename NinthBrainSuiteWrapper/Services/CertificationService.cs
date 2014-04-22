@@ -14,17 +14,27 @@ namespace NinthBrainSoftware.HostedEngine.Client.Services
     /// <summary>
     /// Performs all actions pertaining to the Certifications Collection.
     /// </summary>
-    public class CertificationService : BaseService, ICertificationService
+    public class CertificationService : BaseService
     {
+        private Configuration configuration = null;
+        private NinthBrainSuiteService manager = null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="configuration"></param>
+        /// <param name="manager"></param>
+        public CertificationService(Configuration configuration, NinthBrainSuiteService manager)
+        {
+            this.configuration = configuration;
+            this.manager = manager;
+        }
 
         /// <summary>
         /// Get an array of individuals.
         /// </summary>
-        /// <param name="apiKey">The API key for the application</param>
-        /// <param name="modifiedSince">limit individual to individuals modified since the supplied date</param>
-        /// <param name="status">Match the exact individual status.</param>
         /// <returns>Returns a list of individuals.</returns>
-        public IList<Certification> GetCertifications(string apiKey)
+        public IList<Certification> GetCertifications()
         {
             IList<Certification> certifications = new List<Certification>();
             // Construct access URL
@@ -32,7 +42,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Services
             string url = Config.ConstructUrl("Certification/GetCertificationList", null, null);
 
             // Get REST response
-            CUrlResponse response = RestClient.Get(url, apiKey);
+            CUrlResponse response = RestClient.Get(url, configuration);
 
             if (response.IsError)
             {

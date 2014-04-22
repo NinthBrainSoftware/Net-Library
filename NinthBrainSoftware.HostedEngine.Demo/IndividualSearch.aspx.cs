@@ -20,21 +20,15 @@ namespace NinthBrainSoftware.HostedEngine.Demo
 {
     public partial class IndividualSearch : System.Web.UI.Page
     {
-        NinthBrainSuite _ninthBrainSoftware = null;
-        private string _apiKey = string.Empty;
-
-        protected void Page_Load(object sender, EventArgs e)
+              protected void Page_Load(object sender, EventArgs e)
         {
             PopulateGrid();
         }
 
         private void PopulateGrid()
         {
-            _apiKey = ConfigurationManager.AppSettings["HostedEngineAPIKey"];
 
-            _ninthBrainSoftware = new NinthBrainSuite(_apiKey);
-
-            IList<Individual> indList = _ninthBrainSoftware.GetIndividuals(null, null);
+            IList<Individual> indList = NinthBrainSuiteAPI.IndividualService.GetIndividuals(null, null);
 
             this.gvIndividual.DataSource = indList;
             this.gvIndividual.DataBind();
@@ -60,7 +54,7 @@ namespace NinthBrainSoftware.HostedEngine.Demo
 
                 Individual ind;
 
-                ind = _ninthBrainSoftware.GetIndividualByNBSId(nbsId.ToString());
+                ind = NinthBrainSuiteAPI.IndividualService.GetIndividualByNBSId(nbsId.ToString());
 
                 DateTime now = DateTime.Now;
 
@@ -145,7 +139,7 @@ namespace NinthBrainSoftware.HostedEngine.Demo
                 ind.PhoneNumbers.Add(new PhoneNumber(this.businessPhoneNumber.Text, "Business1"));
                 ind.PhoneNumbers.Add(new PhoneNumber(this.homePhoneNumber.Text, "Home1"));
 
-                _ninthBrainSoftware.AddIndividual(ind);
+                NinthBrainSuiteAPI.IndividualService.AddIndividual(ind);
 
                 DateTime now = DateTime.Now;
 
@@ -173,7 +167,7 @@ namespace NinthBrainSoftware.HostedEngine.Demo
             {
                 Individual ind;
 
-                ind = _ninthBrainSoftware.GetIndividualByNBSId(this.nbsIdSearch.Text);
+                ind = NinthBrainSuiteAPI.IndividualService.GetIndividualByNBSId(this.nbsIdSearch.Text);
 
                 DateTime now = DateTime.Now;
 
@@ -199,7 +193,7 @@ namespace NinthBrainSoftware.HostedEngine.Demo
             {
                 Individual ind = new Individual();
 
-                _ninthBrainSoftware.GetIndividualByUniqueIdentifer(this.uniqueIdentifierSearch.Text);
+                NinthBrainSuiteAPI.IndividualService.GetIndividualByUniqueIdentifier(this.uniqueIdentifierSearch.Text);
 
                 DateTime now = DateTime.Now;
 

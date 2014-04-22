@@ -11,12 +11,12 @@ namespace NinthBrainSoftware.HostedEngine.Client.Services
     /// <summary>
     /// Super class for all services.
     /// </summary>
-    public abstract class BaseService : IBaseService
+    public abstract class BaseService
     {
         /// <summary>
         /// Get the rest client being used by the service.
         /// </summary>
-        public virtual IRestClient RestClient { get; set; }
+        public virtual RestClient RestClient { get; set; }
         
         /// <summary>
         /// Class constructor.

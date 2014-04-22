@@ -14,10 +14,9 @@ namespace NinthBrainSoftware.HostedEngine.Demo
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            //ScormCloud.Configuration =
-            //    new NinthBrainSoftware.HostedEngine.Client.Configuration(
-            //            WebConfigurationManager.AppSettings["HostedEngineWebServicesUrl"],
-            //            WebConfigurationManager.AppSettings["HostedEngineAPIKey"]);
+            NinthBrainSuiteAPI.Configuration = new NinthBrainSoftware.HostedEngine.Client.Util.Configuration(
+                WebConfigurationManager.AppSettings["NinthBrainServicesUrl"], 
+                WebConfigurationManager.AppSettings["NinthBrainApiKey"]);
         }
 
         protected void Session_Start(object sender, EventArgs e)

@@ -19,16 +19,10 @@ namespace NinthBrainSoftware.HostedEngine.Demo
 {
     public partial class CertificationList : System.Web.UI.Page
     {
-        NinthBrainSuite _ninthBrainSoftware = null;
-        private string _apiKey = string.Empty;
-
+    
         protected void Page_Load(object sender, EventArgs e)
         {
-            _apiKey = ConfigurationManager.AppSettings["HostedEngineAPIKey"];
-
-            _ninthBrainSoftware = new NinthBrainSuite(_apiKey);
-
-            IList<Certification> certList = _ninthBrainSoftware.GetCertifications();
+            IList<Certification> certList = NinthBrainSuiteAPI.CertificationService.GetCertifications();
 
             StringBuilder ct = new StringBuilder();
 

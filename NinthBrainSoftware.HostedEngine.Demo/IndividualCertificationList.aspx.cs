@@ -21,21 +21,15 @@ namespace NinthBrainSoftware.HostedEngine.Demo
 {
     public partial class IndividualCertificationList : System.Web.UI.Page
     {
-        NinthBrainSuite _ninthBrainSoftware = null;
-        private string _apiKey = string.Empty;
-
+       
         protected void Page_Load(object sender, EventArgs e)
         {
-            PopulateGrid();           
+            PopulateGrid();
         }
 
         private void PopulateGrid()
         {
-            _apiKey = ConfigurationManager.AppSettings["HostedEngineAPIKey"];
-
-            _ninthBrainSoftware = new NinthBrainSuite(_apiKey);
-
-            IList<IndividualCertification> certList = _ninthBrainSoftware.GetIndividualCertifications();
+            IList<IndividualCertification> certList = NinthBrainSuiteAPI.IndividualCertificationService.GetIndividualCertifications();
 
             this.gvCertification.DataSource = certList;
             this.gvCertification.DataBind();
@@ -57,7 +51,7 @@ namespace NinthBrainSoftware.HostedEngine.Demo
         private void PopulateDropdowns()
         {
             this.certification.Items.Clear();
-            IList<Certification> certList = _ninthBrainSoftware.GetCertifications();
+            IList<Certification> certList = NinthBrainSuiteAPI.CertificationService.GetCertifications();
 
             this.certification.DataSource = certList;
             this.certification.DataBind();
@@ -65,11 +59,11 @@ namespace NinthBrainSoftware.HostedEngine.Demo
             this.certification.Items.Insert(0, new ListItem("", "0"));
 
             this.individual.Items.Clear();
-            IList<Individual> indList = _ninthBrainSoftware.GetIndividuals(null, null);
+            IList<Individual> indList = NinthBrainSuiteAPI.IndividualService.GetIndividuals(null, null);
 
             this.individual.DataSource = indList;
             this.individual.DataBind();
-            
+
             this.individual.Items.Insert(0, new ListItem("", "0"));
         }
         private void PopulateIndividualCertification(int individualCertificationId)
@@ -83,7 +77,7 @@ namespace NinthBrainSoftware.HostedEngine.Demo
 
                 IndividualCertification indCert;
 
-                indCert = _ninthBrainSoftware.GetIndividualCertification(individualCertificationId);
+                indCert = NinthBrainSuiteAPI.IndividualCertificationService.GetIndividualCertification(individualCertificationId);
 
                 DateTime now = DateTime.Now;
 
@@ -91,10 +85,10 @@ namespace NinthBrainSoftware.HostedEngine.Demo
                 this.individual.SelectedValue = indCert.NBSId.ToString();
                 this.activationDate.Text = indCert.ActivationDate.ToShortDateString();
                 this.expirationDate.Text = indCert.ExpirationDate.ToShortDateString();
-                this.certificationNumber.Text = indCert.CertificationNumber;    
+                this.certificationNumber.Text = indCert.CertificationNumber;
 
                 this.btnInsert.Visible = false;
-                this.btnUpdate.Visible = true;                
+                this.btnUpdate.Visible = true;
             }
             catch (IllegalArgumentException illegalEx)
             {
@@ -165,7 +159,7 @@ namespace NinthBrainSoftware.HostedEngine.Demo
                 indCert.State = this.stateCode.Text;
                 indCert.Country = this.countryCode.Text;
 
-                _ninthBrainSoftware.UpdateIndividualCertification(indCert);
+                NinthBrainSuiteAPI.IndividualCertificationService.Update(indCert);
 
                 DateTime now = DateTime.Now;
 
@@ -200,7 +194,7 @@ namespace NinthBrainSoftware.HostedEngine.Demo
                 indCert.State = this.stateCode.Text;
                 indCert.Country = this.countryCode.Text;
 
-                _ninthBrainSoftware.InsertIndividualCertification(indCert);
+                NinthBrainSuiteAPI.IndividualCertificationService.Insert(indCert);
 
                 this.message.Text = "The IndividualCertification was Inserted.";
             }
