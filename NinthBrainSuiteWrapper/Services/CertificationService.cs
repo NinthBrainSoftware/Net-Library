@@ -46,7 +46,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Services
 
             if (response.IsError)
             {
-                throw new NinthBrainAPIException(url);
+                throw new NinthBrainAPIException("Body: " + response.Body);
             }
 
             if (response.HasData)

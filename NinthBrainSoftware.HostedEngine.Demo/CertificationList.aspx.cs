@@ -21,7 +21,7 @@ namespace NinthBrainSoftware.HostedEngine.Demo
     {
     
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {            
             IList<Certification> certList = NinthBrainSuiteAPI.CertificationService.GetCertifications();
 
             StringBuilder ct = new StringBuilder();
