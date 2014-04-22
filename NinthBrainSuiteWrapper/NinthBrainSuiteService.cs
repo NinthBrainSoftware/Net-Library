@@ -55,7 +55,7 @@ namespace NinthBrainSoftware.HostedEngine.Client
         }
 
         /// <summary>
-        /// Creates a new ConstantContact object using provided apiKey and accessToken parameters
+        /// Creates a new NinthBrain object using provided apiKey and accessToken parameters
         /// </summary>
         /// <param name="config">Configuration</param>
         public NinthBrainSuiteService(Configuration config)

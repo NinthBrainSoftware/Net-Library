@@ -69,7 +69,7 @@ namespace NinthBrainSoftware.HostedEngine.Client
 
 
         /// <summary>
-        /// URL to the service, ex: http://cloud.scorm.com/EngineWebServices
+        /// URL to the service, ex: http://api.ninthbrain.com
         /// </summary>
         public static string ServiceUrl
         {
