@@ -42,9 +42,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Services
             string url = Config.ConstructUrl("Certification/GetCertificationList", null, null);
 
             // Get REST response
-            CUrlResponse response = RestClient.Get(url, configuration);
-
-            throw new NinthBrainAPIException(url);
+            CUrlResponse response = RestClient.Get(url, configuration);          
 
             if (response.IsError)
             {
