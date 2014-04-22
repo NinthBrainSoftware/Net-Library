@@ -72,8 +72,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Util
 		/// Make an HTTP Post Multipart request.
 		/// </summary>
 		/// <param name="url">Request URL.</param>
-        /// <param name="accessToken">Constant Contact OAuth2 access token</param>
-        /// <param name="apiKey">The API key for the application</param>
+        /// <param name="configuration"></param>
         /// <param name="data">Data to send with request.</param>
         /// <returns>The response body, http info, and error (if one exists).</returns>
 		public CUrlResponse PostMultipart(string url,  Configuration configuration, byte[] data)
@@ -85,8 +84,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Util
         /// Make an Http PUT request.
         /// </summary>
         /// <param name="url">Request URL.</param>
-        /// <param name="accessToken">Constant Contact OAuth2 access token</param>
-        /// <param name="apiKey">The API key for the application</param>
+        /// <param name="configuration"></param>
         /// <param name="data">Data to send with request.</param>
         /// <returns>The response body, http info, and error (if one exists).</returns>
         public CUrlResponse Put(string url, Configuration configuration, string data)
@@ -106,8 +104,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Util
         /// Make an Http DELETE request.
         /// </summary>
         /// <param name="url">Request URL.</param>
-        /// <param name="accessToken">Constant Contact OAuth2 access token</param>
-        /// <param name="apiKey">The API key for the application</param>
+        /// <param name="configuration"></param>
         /// <returns>The response body, http info, and error (if one exists).</returns>
         public CUrlResponse Delete(string url, Configuration configuration)
         {
