@@ -122,6 +122,8 @@ namespace NinthBrainSoftware.HostedEngine.Client.Util
 
             address = string.Concat(configuration.ServiceUrl, url);
 
+            throw new Exception("Address: " + address);
+
             //Moved apiKey to header value
             //if (!string.IsNullOrEmpty(apiKey))
             //{
