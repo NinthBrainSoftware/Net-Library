@@ -44,10 +44,10 @@ namespace NinthBrainSoftware.HostedEngine.Client.Services
             // Get REST response
             CUrlResponse response = RestClient.Get(url, configuration);
 
-            //if (response.IsError)
-            //{
-            //    throw new NinthBrainAPIException(response.GetErrorMessage());
-            //}
+            if (response.IsError)
+            {
+                throw new NinthBrainAPIException(url);
+            }
 
             if (response.HasData)
             {
