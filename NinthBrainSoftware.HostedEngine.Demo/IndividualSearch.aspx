@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/site.Master" AutoEventWireup="true"
-    CodeBehind="WebForm1.aspx.cs" Inherits="NinthBrainSoftware.HostedEngine.Demo.IndividualSearch" %>
+    CodeBehind="IndividualSearch.aspx.cs" Inherits="NinthBrainSoftware.HostedEngine.Demo.IndividualSearch" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -7,41 +7,23 @@
     <div>
         <asp:Literal ID="message" runat="server"></asp:Literal>
     </div>
-    <div>
-        NBS Id:
-        <asp:TextBox ID="nbsIdSearch" runat="server"></asp:TextBox>
-    </div>
-    <div>
-        <asp:Button ID="btnSearchByNbsId" runat="server" Text="Search" OnClick="btnSearchByNbsId_Click" />
-    </div>
-    <div>
-        Unique Identifier
-        <asp:TextBox ID="uniqueIdentifierSearch" runat="server"></asp:TextBox>
-    </div>
-    <div>
-        <asp:Button ID="btnSearchByUniqueIdentifier" runat="server" Text="Search" OnClick="btnSearchByUniqueIdentifier_Click" />
-    </div>
     <asp:Panel ID="listwrapper" runat="server">
-        <h2>
-            Individual List</h2>
         <div>
-            <asp:Button ID="btnAddNew" runat="server" Text="Add New" OnClick="btnAddNew_Click" />
+            NBS Id:
+            <asp:TextBox ID="nbsIdSearch" runat="server"></asp:TextBox>
         </div>
-        <asp:GridView ID="gvIndividual" runat="server" DataKeyNames="NBSId" OnRowCommand="gvIndividual_RowCommand"
-            OnRowDataBound="gvIndividual_RowDataBound" AutoGenerateColumns="false">
-            <Columns>
-                <asp:ButtonField Text="Select" CommandName="Select" ButtonType="Button" />
-                <asp:BoundField HeaderText="NBS Id" DataField="NBSId" />
-                <asp:TemplateField HeaderText="Employee">
-                    <ItemTemplate>
-                        <asp:Literal ID="ltlEmployee" runat="server"></asp:Literal>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:BoundField HeaderText="Date of Birth" DataField="DateOfBirth" />
-            </Columns>
-        </asp:GridView>
+        <div>
+            <asp:Button ID="btnSearchByNbsId" runat="server" Text="Search" OnClick="btnSearchByNbsId_Click" />
+        </div>
+        <div>
+            Unique Identifier
+            <asp:TextBox ID="uniqueIdentifierSearch" runat="server"></asp:TextBox>
+        </div>
+        <div>
+            <asp:Button ID="btnSearchByUniqueIdentifier" runat="server" Text="Search" OnClick="btnSearchByUniqueIdentifier_Click" />
+        </div>
     </asp:Panel>
-    <asp:Panel ID="detailwrapper" runat="server">
+    <asp:Panel ID="detailwrapper" runat="server" Visible="false">
         <div>
             <asp:Button ID="btnBackToList" runat="server" Text="Back to List" OnClick="btnBackToList_Click" />
         </div>

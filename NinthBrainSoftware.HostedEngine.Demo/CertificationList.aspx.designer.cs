@@ -13,15 +13,6 @@ namespace NinthBrainSoftware.HostedEngine.Demo {
     public partial class CertificationList {
         
         /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
         /// listwrapper control.
         /// </summary>
         /// <remarks>
@@ -31,12 +22,12 @@ namespace NinthBrainSoftware.HostedEngine.Demo {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl listwrapper;
         
         /// <summary>
-        /// certificationsTableDiv control.
+        /// gvCertification control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl certificationsTableDiv;
+        protected global::System.Web.UI.WebControls.GridView gvCertification;
     }
 }

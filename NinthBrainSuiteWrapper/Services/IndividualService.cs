@@ -64,7 +64,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Services
         {
             Individual individual = null;
 
-            string url = String.Concat(configuration, String.Format("Individual/GetByNBSId?nbsId={0}", nbsId));
+            string url = String.Format("Individual/GetByNBSId?nbsId={0}", nbsId);
             CUrlResponse response = RestClient.Get(url, configuration);
 
             if (response.IsError)
@@ -90,7 +90,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Services
         {
             Individual individual = null;
 
-            string url = String.Concat(configuration, String.Format("Individual/GetByNBSId?employeeNumber={0}", employeeNumber));
+            string url = String.Format("Individual/GetByNBSId?employeeNumber={0}", employeeNumber);
             CUrlResponse response = RestClient.Get(url, configuration);
 
             if (response.IsError)
@@ -116,7 +116,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Services
         {
             Individual individual = null;
 
-            string url = String.Concat(configuration, String.Format("Individual/GetByNBSId?uniqueIdentifier={0}", uniqueIdentifier));
+            string url = String.Format("Individual/GetByUniqueIdentifier?uniqueIdentifier={0}", uniqueIdentifier);
             CUrlResponse response = RestClient.Get(url, configuration);
 
             if (response.IsError)
@@ -140,7 +140,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Services
         public Individual AddIndividual(Individual individual)
         {
             Individual newIndividual = null;
-            string url = String.Concat(configuration, "Individual/Insert");
+            string url = "Individual/Insert";
 
             string json = individual.ToJSON();
             CUrlResponse response = RestClient.Post(url, configuration, json);
@@ -166,7 +166,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Services
         public Individual UpdateIndividual(Individual individual)
         {
             Individual updatedIndividual = null;
-            string url = String.Concat(configuration, "Individual/Update");
+            string url = "Individual/Update";
 
             string json = individual.ToJSON();
             CUrlResponse response = RestClient.Post(url, configuration, json);

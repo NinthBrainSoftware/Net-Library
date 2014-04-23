@@ -65,8 +65,20 @@ namespace NinthBrainSoftware.HostedEngine.Demo
                 this.uniqueIdentifier.Text = ind.UniqueNumber;
                 this.logonId.Text = ind.LogonId;
 
-                this.businessPhoneNumber.Text = ind.PhoneNumbers.Find(x => x.PhoneType == "Business1").Number;
-                this.homePhoneNumber.Text = ind.PhoneNumbers.Find(x => x.PhoneType == "Home1").Number;
+                PhoneNumber number;
+                number = ind.PhoneNumbers.Find(x => x.PhoneType == "Business1");
+
+                if (number != null)
+                {
+                    this.businessPhoneNumber.Text = number.Number;
+                }
+
+                number = ind.PhoneNumbers.Find(x => x.PhoneType == "Home1");
+
+                if (number != null)
+                {
+                    this.homePhoneNumber.Text = number.Number;
+                }
 
                 this.btnInsert.Visible = false;
                 this.btnUpdate.Visible = true;

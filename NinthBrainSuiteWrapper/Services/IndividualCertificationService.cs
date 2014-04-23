@@ -109,7 +109,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Services
         public IndividualCertification Update(IndividualCertification individualCertification)
         {
             IndividualCertification updatedIndividualCertification = null;
-            string url = String.Concat(configuration, "IndividualCertification/Update");
+            string url =  "IndividualCertification/Update";
 
             string json = individualCertification.ToJSON();
             CUrlResponse response = RestClient.Post(url, configuration, json);
@@ -134,7 +134,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Services
         public IndividualCertification Insert(IndividualCertification individualCertification)
         {
             IndividualCertification updatedIndividualCertification = null;
-            string url = String.Concat(configuration, "IndividualCertification/Insert");
+            string url =  "IndividualCertification/Insert";
 
             string json = individualCertification.ToJSON();
             CUrlResponse response = RestClient.Post(url, configuration, json);

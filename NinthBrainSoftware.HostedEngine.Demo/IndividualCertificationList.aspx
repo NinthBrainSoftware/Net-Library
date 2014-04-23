@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/site.Master" AutoEventWireup="true"
-    CodeBehind="WebForm1.aspx.cs" Inherits="NinthBrainSoftware.HostedEngine.Demo.IndividualCertificationList" %>
+    CodeBehind="IndividualCertificationList.aspx.cs" Inherits="NinthBrainSoftware.HostedEngine.Demo.IndividualCertificationList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

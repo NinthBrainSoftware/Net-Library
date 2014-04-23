@@ -20,41 +20,17 @@ namespace NinthBrainSoftware.HostedEngine.Demo
 {
     public partial class IndividualSearch : System.Web.UI.Page
     {
-              protected void Page_Load(object sender, EventArgs e)
-        {
-            PopulateGrid();
-        }
-
-        private void PopulateGrid()
+        protected void Page_Load(object sender, EventArgs e)
         {
 
-            IList<Individual> indList = NinthBrainSuiteAPI.IndividualService.GetIndividuals(null, null);
-
-            this.gvIndividual.DataSource = indList;
-            this.gvIndividual.DataBind();
         }
 
-        protected virtual void gvIndividual_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            if (e.CommandName == "Select")
-            {
-                int index = Int32.Parse((string)e.CommandArgument);
-                int nbsId = (int)this.gvIndividual.DataKeys[index].Values["NBSId"];
-
-                PopulateIndividual(nbsId);
-            }
-        }
-
-        private void PopulateIndividual(int nbsId)
+        private void PopulateIndividual(Individual ind)
         {
             try
             {
                 this.detailwrapper.Visible = true;
                 this.listwrapper.Visible = false;
-
-                Individual ind;
-
-                ind = NinthBrainSuiteAPI.IndividualService.GetIndividualByNBSId(nbsId.ToString());
 
                 DateTime now = DateTime.Now;
 
@@ -62,7 +38,21 @@ namespace NinthBrainSoftware.HostedEngine.Demo
                 this.lastName.Text = ind.LastName;
                 this.uniqueIdentifier.Text = ind.UniqueNumber;
                 this.logonId.Text = ind.LogonId;
-                this.password.Visible = false;
+
+                PhoneNumber number;
+                number = ind.PhoneNumbers.Find(x => x.PhoneType == "Business1");
+
+                if (number != null)
+                {
+                    this.businessPhoneNumber.Text = number.Number;
+                }
+
+                number = ind.PhoneNumbers.Find(x => x.PhoneType == "Home1");
+
+                if (number != null)
+                {
+                    this.homePhoneNumber.Text = number.Number;
+                }
 
                 this.btnInsert.Visible = false;
                 this.btnUpdate.Visible = true;
@@ -84,18 +74,6 @@ namespace NinthBrainSoftware.HostedEngine.Demo
 
         }
 
-        protected virtual void gvIndividual_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                Individual o = (Individual)e.Row.DataItem;
-                Literal ltlEmployee = (Literal)e.Row.FindControl("ltlEmployee");
-
-                ltlEmployee.Text = string.Format("{0} {1}", o.FirstName, o.LastName);
-            }
-
-        }
-
         protected virtual void btnAddNew_Click(object sender, EventArgs e)
         {
             this.listwrapper.Visible = false;
@@ -109,7 +87,7 @@ namespace NinthBrainSoftware.HostedEngine.Demo
 
             this.btnInsert.Visible = true;
             this.btnUpdate.Visible = false;
-            
+
         }
 
         protected virtual void btnBackToList_Click(object sender, EventArgs e)
@@ -117,7 +95,7 @@ namespace NinthBrainSoftware.HostedEngine.Demo
             this.listwrapper.Visible = true;
             this.detailwrapper.Visible = false;
 
-            PopulateGrid();
+            this.message.Text = "";
         }
 
         protected virtual void btnUpdate_Click(object sender, EventArgs e)
@@ -171,7 +149,12 @@ namespace NinthBrainSoftware.HostedEngine.Demo
 
                 DateTime now = DateTime.Now;
 
-                this.message.Text = string.Format("{0} {1} was found on {2}.", ind.FirstName, ind.LastName, now.ToString());
+                if (ind != null)
+                {
+                    PopulateIndividual(ind);
+
+                    this.message.Text = string.Format("{0} {1} was found on {2}.", ind.FirstName, ind.LastName, now.ToString());
+                }                
             }
             catch (IllegalArgumentException illegalEx)
             {
@@ -191,13 +174,18 @@ namespace NinthBrainSoftware.HostedEngine.Demo
         {
             try
             {
-                Individual ind = new Individual();
+                Individual ind;
 
-                NinthBrainSuiteAPI.IndividualService.GetIndividualByUniqueIdentifier(this.uniqueIdentifierSearch.Text);
+                ind = NinthBrainSuiteAPI.IndividualService.GetIndividualByUniqueIdentifier(this.uniqueIdentifierSearch.Text);
 
                 DateTime now = DateTime.Now;
 
-                this.message.Text = string.Format("{0} {1} was found on {2}.", ind.FirstName, ind.LastName, now.ToString());
+                if (ind != null)
+                {
+                    PopulateIndividual(ind);
+
+                    this.message.Text = string.Format("{0} {1} was found on {2}.", ind.FirstName, ind.LastName, now.ToString());
+                }
             }
             catch (IllegalArgumentException illegalEx)
             {

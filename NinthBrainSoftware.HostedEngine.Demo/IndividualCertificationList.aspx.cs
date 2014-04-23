@@ -86,6 +86,8 @@ namespace NinthBrainSoftware.HostedEngine.Demo
                 this.activationDate.Text = indCert.ActivationDate.ToShortDateString();
                 this.expirationDate.Text = indCert.ExpirationDate.ToShortDateString();
                 this.certificationNumber.Text = indCert.CertificationNumber;
+                this.stateCode.Text = indCert.State;
+                this.countryCode.Text = indCert.Country;
 
                 this.btnInsert.Visible = false;
                 this.btnUpdate.Visible = true;

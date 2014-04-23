@@ -24,28 +24,8 @@ namespace NinthBrainSoftware.HostedEngine.Demo
         {            
             IList<Certification> certList = NinthBrainSuiteAPI.CertificationService.GetCertifications();
 
-            StringBuilder ct = new StringBuilder();
-
-            ct.AppendLine("<table class=\"certificationsTableDiv\">");
-
-            ct.AppendLine("<tr>");
-            ct.AppendLine("<td> Certification ID</td>");
-            ct.AppendLine("<td> Certification Name</td>");
-
-            ct.AppendLine("</tr>");
-
-            foreach (Certification reg in certList)
-            {
-                ct.AppendLine("<tr>");
-                ct.AppendLine("<td>" + reg.CertificationId + "</td>");
-                ct.AppendLine("<td>" + reg.CertificationName + "</td>");
-
-                ct.AppendLine("</tr>");
-            }
-
-            ct.AppendLine("</table>");
-
-            certificationsTableDiv.InnerHtml = ct.ToString();
+            this.gvCertification.DataSource = certList;
+            this.gvCertification.DataBind();
         }
     }
 }
