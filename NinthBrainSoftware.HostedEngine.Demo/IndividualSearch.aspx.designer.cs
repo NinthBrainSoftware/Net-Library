@@ -13,6 +13,15 @@ namespace NinthBrainSoftware.HostedEngine.Demo {
     public partial class IndividualSearch {
         
         /// <summary>
+        /// messagePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel messagePanel;
+        
+        /// <summary>
         /// message control.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace NinthBrainSoftware.HostedEngine.Demo {
         protected global::System.Web.UI.WebControls.Panel detailwrapper;
         
         /// <summary>
+        /// nbsId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField nbsId;
+        
+        /// <summary>
         /// btnBackToList control.
         /// </summary>
         /// <remarks>
@@ -83,6 +101,15 @@ namespace NinthBrainSoftware.HostedEngine.Demo {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnBackToList;
+        
+        /// <summary>
+        /// btnUpdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpdate;
         
         /// <summary>
         /// firstName control.
@@ -94,6 +121,15 @@ namespace NinthBrainSoftware.HostedEngine.Demo {
         protected global::System.Web.UI.WebControls.TextBox firstName;
         
         /// <summary>
+        /// middleName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox middleName;
+        
+        /// <summary>
         /// lastName control.
         /// </summary>
         /// <remarks>
@@ -101,15 +137,6 @@ namespace NinthBrainSoftware.HostedEngine.Demo {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox lastName;
-        
-        /// <summary>
-        /// uniqueIdentifier control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox uniqueIdentifier;
         
         /// <summary>
         /// logonId control.
@@ -130,6 +157,105 @@ namespace NinthBrainSoftware.HostedEngine.Demo {
         protected global::System.Web.UI.WebControls.TextBox password;
         
         /// <summary>
+        /// uniqueIdentifier control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox uniqueIdentifier;
+        
+        /// <summary>
+        /// employeeNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox employeeNumber;
+        
+        /// <summary>
+        /// jobTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList jobTitle;
+        
+        /// <summary>
+        /// department control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList department;
+        
+        /// <summary>
+        /// locale control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList locale;
+        
+        /// <summary>
+        /// workShift control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList workShift;
+        
+        /// <summary>
+        /// dateOfBirth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox dateOfBirth;
+        
+        /// <summary>
+        /// hireDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox hireDate;
+        
+        /// <summary>
+        /// gender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList gender;
+        
+        /// <summary>
+        /// fullTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList fullTime;
+        
+        /// <summary>
+        /// isEmployee control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList isEmployee;
+        
+        /// <summary>
         /// businessPhoneNumber control.
         /// </summary>
         /// <remarks>
@@ -148,21 +274,66 @@ namespace NinthBrainSoftware.HostedEngine.Demo {
         protected global::System.Web.UI.WebControls.TextBox homePhoneNumber;
         
         /// <summary>
-        /// btnInsert control.
+        /// homeAddressLine1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnInsert;
+        protected global::System.Web.UI.WebControls.TextBox homeAddressLine1;
         
         /// <summary>
-        /// btnUpdate control.
+        /// homeAddressLine2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpdate;
+        protected global::System.Web.UI.WebControls.TextBox homeAddressLine2;
+        
+        /// <summary>
+        /// homeAddressCity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox homeAddressCity;
+        
+        /// <summary>
+        /// homeAddressState control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList homeAddressState;
+        
+        /// <summary>
+        /// homeAddressZipCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox homeAddressZipCode;
+        
+        /// <summary>
+        /// businessEmailAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox businessEmailAddress;
+        
+        /// <summary>
+        /// personalEmailAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox personalEmailAddress;
     }
 }

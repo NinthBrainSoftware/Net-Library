@@ -72,19 +72,31 @@ namespace NinthBrainSoftware.HostedEngine.Client.Components.Individuals
         public string Password { get; set; }
 
         [DataMember(Name = "DateOfBirth")]
-        public string DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
         [DataMember(Name = "Gender")]
         public string Gender { get; set; }
 
+        [DataMember(Name = "JobTitleId")]
+        public int JobTitleId { get; set; }
+
         [DataMember(Name = "JobTitle")]
         public string JobTitle { get; set; }
+
+        [DataMember(Name = "DepartmentId")]
+        public int DepartmentId { get; set; }
 
         [DataMember(Name = "Department")]
         public string Department { get; set; }
 
+        [DataMember(Name = "LocaleId")]
+        public int LocaleId { get; set; }
+
         [DataMember(Name = "Locale")]
         public string Locale { get; set; }
+
+        [DataMember(Name = "WorkShiftId")]
+        public int WorkShiftId { get; set; }
 
         [DataMember(Name = "WorkShift")]
         public string WorkShift { get; set; }
@@ -102,13 +114,13 @@ namespace NinthBrainSoftware.HostedEngine.Client.Components.Individuals
         public int Status { get; set; }
 
         [DataMember(Name = "HireDate")]
-        public string HireDate { get; set; }
+        public DateTime HireDate { get; set; }
 
         [DataMember(Name = "InsertDate")]
         public string InsertDate { get; set; }
 
         [DataMember(Name = "UpdateDate")]
-        public string UpdateDate { get; set; }
+        public DateTime UpdateDate { get; set; }
 
         [DataMember(Name = "EmailAddresses")]
         public List<EmailAddress> EmailAddresses { get; set; }

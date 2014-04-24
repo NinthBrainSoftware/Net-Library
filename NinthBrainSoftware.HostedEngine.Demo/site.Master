@@ -6,7 +6,11 @@
     <title>Ninth Brain Suite - API Demo</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="js/formee.js"></script>
+    <link rel="stylesheet" href="css/formee-structure.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/formee-style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/typography.css" type="text/css" media="screen" />
     <style>
         @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
         #cssmenu, #cssmenu ul, #cssmenu ul li, #cssmenu ul li a, #cssmenu #menu-button
@@ -46,6 +50,7 @@
             background: -o-linear-gradient(top, #51bbd2 0%, #2d97af 100%);
             background: -ms-linear-gradient(top, #51bbd2 0%, #2d97af 100%);
             background: linear-gradient(to bottom, #51bbd2 0%, #2d97af 100%);
+            margin-bottom:10px;            
         }
         #cssmenu > ul
         {

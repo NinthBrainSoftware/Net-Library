@@ -157,16 +157,19 @@ namespace NinthBrainSoftware.HostedEngine.Client.Util
             // Now try to send the request
             try
             {
-                //response = request.GetResponse() as HttpWebResponse;
-                
-                try
-                {
-                    response = request.GetResponse() as HttpWebResponse;
-                }
-                catch (WebException ex)
-                {
-                    response = ex.Response as HttpWebResponse;
-                }
+                response = request.GetResponse() as HttpWebResponse;
+
+                //try
+                //{
+                //    response = request.GetResponse() as HttpWebResponse;
+                //}
+                //catch (WebException ex)
+                //{                                
+                //    if (((HttpWebResponse)ex.Response).StatusCode == HttpStatusCode.NotFound)
+                //    {
+                //        response = ex.Response as HttpWebResponse;                     
+                //    }
+                //}
 
                 // Expect the unexpected
                 if (request.HaveResponse == true && response == null)

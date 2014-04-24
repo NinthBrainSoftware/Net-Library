@@ -56,6 +56,26 @@ namespace NinthBrainSoftware.HostedEngine.Client
             get { return Service.IndividualService; }
         }
 
+        public static DepartmentService DepartmentService
+        {
+            get { return Service.DepartmentService; }
+        }
+
+        public static JobTitleService JobTitleService
+        {
+            get { return Service.JobTitleService; }
+        }
+
+        public static LocaleService LocaleService
+        {
+            get { return Service.LocaleService; }
+        }
+
+        public static WorkShiftService WorkShiftService
+        {
+            get { return Service.WorkShiftService; }
+        }
+
         /// <summary>
         /// The Application ID obtained by registering with the SCORM Engine Service
         /// </summary>

@@ -37,17 +37,22 @@ namespace NinthBrainSoftware.HostedEngine.Client.Components.Individuals
         /// <summary>
         /// Class constructor.
         /// </summary>
-        public PhoneNumber() { }
-
-        /// <summary>
-        /// Class constructor.
-        /// </summary>
         /// <param name="phoneNumber">Phone address.</param>
         public PhoneNumber(string phoneNumber, string phoneType)
         {
             this.Number = phoneNumber;
             this.PhoneType = phoneType;
+            this.Country = "US";
         }
+
+        [Newtonsoft.Json.JsonConstructor()]
+        public PhoneNumber(string phoneNumber, string country, string phoneType)
+        {
+            this.Number = phoneNumber;
+            this.Country = country;
+            this.PhoneType = phoneType;
+        }
+
     }
 
     /// <summary>

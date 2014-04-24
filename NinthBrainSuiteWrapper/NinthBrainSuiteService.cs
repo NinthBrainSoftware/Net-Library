@@ -39,6 +39,10 @@ namespace NinthBrainSoftware.HostedEngine.Client
         private IndividualCertificationService individualCertificationService = null;
         private CertificationService certificationService = null;
         private IndividualService individualService = null;
+        private DepartmentService departmentService = null;
+        private JobTitleService jobTitleService = null;
+        private LocaleService localeService = null;
+        private WorkShiftService workShiftService = null;
 
         #endregion
 
@@ -65,13 +69,15 @@ namespace NinthBrainSoftware.HostedEngine.Client
             individualService = new IndividualService(configuration, this);
             certificationService = new CertificationService(configuration, this);
             individualCertificationService = new IndividualCertificationService(configuration, this);
+            departmentService = new DepartmentService(configuration, this);
+            jobTitleService = new JobTitleService(configuration, this);
+            localeService = new LocaleService(configuration, this);
+            workShiftService = new WorkShiftService(configuration, this);
         }
 
         #endregion
 
-        #region Private methods
-
-        #endregion
+       
 
         #region Public methods
 
@@ -89,7 +95,26 @@ namespace NinthBrainSoftware.HostedEngine.Client
         {
             get { return individualService; }
         }
-        
+
+        public DepartmentService DepartmentService
+        {
+            get { return departmentService; }
+        }
+
+        public JobTitleService JobTitleService
+        {
+            get { return jobTitleService; }
+        }
+
+        public LocaleService LocaleService
+        {
+            get { return localeService; }
+        }
+
+        public WorkShiftService WorkShiftService
+        {
+            get { return workShiftService; }
+        }
         #endregion
     }
 }

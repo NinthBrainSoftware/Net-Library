@@ -13,6 +13,15 @@ namespace NinthBrainSoftware.HostedEngine.Demo {
     public partial class IndividualCertificationList {
         
         /// <summary>
+        /// messagePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel messagePanel;
+        
+        /// <summary>
         /// message control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace NinthBrainSoftware.HostedEngine.Demo {
         protected global::System.Web.UI.WebControls.Panel detailwrapper;
         
         /// <summary>
+        /// individualCertificationId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField individualCertificationId;
+        
+        /// <summary>
         /// btnBackToList control.
         /// </summary>
         /// <remarks>
@@ -38,6 +56,24 @@ namespace NinthBrainSoftware.HostedEngine.Demo {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnBackToList;
+        
+        /// <summary>
+        /// btnInsert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnInsert;
+        
+        /// <summary>
+        /// btnUpdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpdate;
         
         /// <summary>
         /// certification control.
@@ -101,33 +137,6 @@ namespace NinthBrainSoftware.HostedEngine.Demo {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox countryCode;
-        
-        /// <summary>
-        /// individualCertificationId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField individualCertificationId;
-        
-        /// <summary>
-        /// btnInsert control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnInsert;
-        
-        /// <summary>
-        /// btnUpdate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpdate;
         
         /// <summary>
         /// listwrapper control.

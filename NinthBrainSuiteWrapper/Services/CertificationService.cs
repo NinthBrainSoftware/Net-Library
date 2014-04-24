@@ -38,8 +38,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Services
         {
             IList<Certification> certifications = new List<Certification>();
             // Construct access URL
-            //string url = (pag == null) ? Config.ConstructUrl(Config.Endpoints.Certifications, null, new object[] { "email", email, "limit", limit, "modified_since", Extensions.ToISO8601String(modifiedSince), "status", status }) : pag.GetNextUrl();
-            string url = Config.ConstructUrl("Certification/GetCertificationList", null, null);
+            string url = Config.ConstructUrl("Certification/GetList", null, null);
 
             // Get REST response
             CUrlResponse response = RestClient.Get(url, configuration);          

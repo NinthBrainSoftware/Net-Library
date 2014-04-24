@@ -17,7 +17,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Components.Individuals
         /// Email address id.
         /// </summary>
         [DataMember(Name = "EmailId", EmitDefaultValue = false)]
-        public int EmailId { get; set; }        
+        public int EmailId { get; set; }
         /// <summary>
         /// Gets or sets the email address.
         /// </summary>
@@ -29,11 +29,9 @@ namespace NinthBrainSoftware.HostedEngine.Client.Components.Individuals
         [DataMember(Name = "EmailType", EmitDefaultValue = false)]
         public string EmailType { get; set; }
 
-        /// <summary>
-        /// Class constructor.
-        /// </summary>
-        public EmailAddress() { }
-
+        [DataMember(Name = "AlertFormat", EmitDefaultValue = false)]
+        public int AlertFormat { get; set; }
+       
         /// <summary>
         /// Class constructor.
         /// </summary>
@@ -42,6 +40,15 @@ namespace NinthBrainSoftware.HostedEngine.Client.Components.Individuals
         {
             this.EmailAddr = emailAddress;
             this.EmailType = emailType;
+            this.AlertFormat = 1;
+        }
+
+        [Newtonsoft.Json.JsonConstructor()]
+        public EmailAddress(string emailAddress, string emailType, int alertFormat)
+        {
+            this.EmailAddr = emailAddress;
+            this.EmailType = emailType;
+            this.AlertFormat = alertFormat;
         }
     }
 

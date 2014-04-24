@@ -73,6 +73,10 @@
   <ItemGroup>
     <Compile Include="Components\Certifications\Certification.cs" />
     <Compile Include="Components\Certifications\IndividualCertification.cs" />
+    <Compile Include="Components\Company\WorkShift.cs" />
+    <Compile Include="Components\Company\Locale.cs" />
+    <Compile Include="Components\Company\JobTitle.cs" />
+    <Compile Include="Components\Company\Department.cs" />
     <Compile Include="Components\Component.cs" />
     <Compile Include="Components\Individuals\Address.cs" />
     <Compile Include="Components\Individuals\PhoneNumber.cs" />
@@ -83,6 +87,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Services\CertificationService.cs" />
+    <Compile Include="Services\WorkShiftService.cs" />
+    <Compile Include="Services\LocaleService.cs" />
+    <Compile Include="Services\JobTitleService.cs" />
+    <Compile Include="Services\DepartmentService.cs" />
     <Compile Include="Services\IndividualCertificationService.cs" />
     <Compile Include="Services\IndividualService.cs" />
     <Compile Include="Util\PatchRequest.cs" />

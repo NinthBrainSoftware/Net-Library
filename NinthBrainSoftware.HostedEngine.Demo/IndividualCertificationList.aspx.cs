@@ -48,6 +48,25 @@ namespace NinthBrainSoftware.HostedEngine.Demo
             }
         }
 
+        private void HideMessage()
+        {
+            this.messagePanel.Visible = false;
+        }
+
+        private void ShowMessage(string message)
+        {
+            this.message.Text = message;
+            this.messagePanel.Visible = true;
+            this.messagePanel.CssClass = "formee-msg-success";
+        }
+
+        private void ShowErrorMessage(string message)
+        {
+            this.message.Text = message;
+            this.messagePanel.Visible = true;
+            this.messagePanel.CssClass = "formee-msg-error";
+        }
+
         private void PopulateDropdowns()
         {
             this.certification.Items.Clear();
@@ -94,15 +113,15 @@ namespace NinthBrainSoftware.HostedEngine.Demo
             }
             catch (IllegalArgumentException illegalEx)
             {
-                this.message.Text = GetExceptionsDetails(illegalEx, "IllegalArgumentException");
+                ShowErrorMessage(GetExceptionsDetails(illegalEx, "IllegalArgumentException"));
             }
             catch (NinthBrainAPIException nbEx)
             {
-                this.message.Text = GetExceptionsDetails(nbEx, "NinthBrainAPIException");
+                ShowErrorMessage(GetExceptionsDetails(nbEx, "NinthBrainAPIException"));
             }
             catch (Exception ex)
             {
-                this.message.Text = GetExceptionsDetails(ex, "Exception");
+                ShowErrorMessage(GetExceptionsDetails(ex, "Exception"));
             }
 
         }
@@ -165,19 +184,19 @@ namespace NinthBrainSoftware.HostedEngine.Demo
 
                 DateTime now = DateTime.Now;
 
-                this.message.Text = "The IndividualCertification was Updated.";
+                ShowMessage("The IndividualCertification was Updated.");
             }
             catch (IllegalArgumentException illegalEx)
             {
-                this.message.Text = GetExceptionsDetails(illegalEx, "IllegalArgumentException");
+                ShowErrorMessage(GetExceptionsDetails(illegalEx, "IllegalArgumentException"));
             }
             catch (NinthBrainAPIException nbEx)
             {
-                this.message.Text = GetExceptionsDetails(nbEx, "NinthBrainAPIException");
+                ShowErrorMessage(GetExceptionsDetails(nbEx, "NinthBrainAPIException"));
             }
             catch (Exception ex)
             {
-                this.message.Text = GetExceptionsDetails(ex, "Exception");
+                ShowErrorMessage(GetExceptionsDetails(ex, "Exception"));
             }
 
         }
@@ -198,19 +217,19 @@ namespace NinthBrainSoftware.HostedEngine.Demo
 
                 NinthBrainSuiteAPI.IndividualCertificationService.Insert(indCert);
 
-                this.message.Text = "The IndividualCertification was Inserted.";
+                ShowMessage("The IndividualCertification was Inserted.");
             }
             catch (IllegalArgumentException illegalEx)
             {
-                this.message.Text = GetExceptionsDetails(illegalEx, "IllegalArgumentException");
+                ShowErrorMessage(GetExceptionsDetails(illegalEx, "IllegalArgumentException"));
             }
             catch (NinthBrainAPIException nbEx)
             {
-                this.message.Text = GetExceptionsDetails(nbEx, "NinthBrainAPIException");
+                ShowErrorMessage( GetExceptionsDetails(nbEx, "NinthBrainAPIException"));
             }
             catch (Exception ex)
             {
-                this.message.Text = GetExceptionsDetails(ex, "Exception");
+                ShowErrorMessage(GetExceptionsDetails(ex, "Exception"));
             }
 
 

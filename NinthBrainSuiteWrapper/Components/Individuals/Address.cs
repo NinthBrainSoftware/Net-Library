@@ -43,7 +43,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Components.Individuals
         /// </summary>
         [DataMember(Name = "State", EmitDefaultValue = false)]
         public string State { get; set; }
-         /// <summary>
+        /// <summary>
         /// Gets or sets the contry code.
         /// </summary>
         [DataMember(Name = "Country", EmitDefaultValue = false)]
@@ -52,12 +52,30 @@ namespace NinthBrainSoftware.HostedEngine.Client.Components.Individuals
         /// Gets or sets the postal code.
         /// </summary>
         [DataMember(Name = "ZipCode", EmitDefaultValue = false)]
-        public string ZipCode { get; set; }      
+        public string ZipCode { get; set; }
+        
+        public Address(string addressType, string addressLine1, string addressLine2, string city, string state, string zipCode)
+        {
+            this.AddressType = addressType;
+            this.AddressLine1 = addressLine1;
+            this.AddressLine2 = addressLine2;
+            this.City = city;
+            this.State = state;
+            this.ZipCode = zipCode;
+            this.Country = "US";
+        }
 
-        /// <summary>
-        /// Class constructor.
-        /// </summary>
-        public Address() { }
+        [Newtonsoft.Json.JsonConstructor()]
+        public Address(string addressType, string addressLine1, string addressLine2, string city, string state, string zipCode, string country)
+        {
+            this.AddressType = addressType;
+            this.AddressLine1 = addressLine1;
+            this.AddressLine2 = addressLine2;
+            this.City = city;
+            this.State = state;
+            this.ZipCode = zipCode;
+            this.Country = country;
+        }
     }
 
     /// <summary>
