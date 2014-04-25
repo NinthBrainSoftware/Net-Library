@@ -99,6 +99,7 @@
     <Content Include="css\formee-structure.css" />
     <Content Include="css\formee-style.css" />
     <Content Include="css\typography.css" />
+    <Content Include="Default.aspx" />
     <Content Include="img\._form-ic-error.png" />
     <Content Include="img\._form-ic-info.png" />
     <Content Include="img\._form-ic-warning.png" />
@@ -133,6 +134,13 @@
     </Compile>
     <Compile Include="CertificationList.aspx.designer.cs">
       <DependentUpon>CertificationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="IndividualSearch.aspx.cs">
       <DependentUpon>IndividualSearch.aspx</DependentUpon>
