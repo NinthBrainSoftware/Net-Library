@@ -1,0 +1,7 @@
+bin\ 
+/NinthBrainSuiteWrapper/bin
+/NinthBrainSuiteWrapper/obj
+/NinthBrainSoftware.HostedEngine.Demo/bin
+/NinthBrainSoftware.HostedEngine.Demo/obj
+/*.suo
+/NinthBrainSoftware.HostedEngine.Demo/Web.config
