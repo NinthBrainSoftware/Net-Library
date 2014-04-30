@@ -7,7 +7,7 @@
 
 <configuration>
     <appSettings>
-        <add key="NinthBrainServicesUrl" value="http://api.ninthbrain.com/" />
+        <add key="NinthBrainServicesUrl" value="http://api.ninthbrain.com" />
         <add key="NinthBrainAPIKey" value="YOUR_API_KEY_HERE" />        
     </appSettings>
 
