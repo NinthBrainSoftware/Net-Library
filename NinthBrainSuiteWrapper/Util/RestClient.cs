@@ -118,6 +118,8 @@ namespace NinthBrainSoftware.HostedEngine.Client.Util
             string responseText = null;
             CUrlResponse urlResponse = new CUrlResponse();
 
+            ServicePointManager.ServerCertificateValidationCallback = ((sender, certificate, chain, sslPolicyErrors) => true);
+
             var address = ""; // url;
 
             address = string.Concat(configuration.ServiceUrl, url);
@@ -170,7 +172,7 @@ namespace NinthBrainSoftware.HostedEngine.Client.Util
                 //        response = ex.Response as HttpWebResponse;                     
                 //    }
                 //}
-
+               
                 // Expect the unexpected
                 if (request.HaveResponse == true && response == null)
                 {
