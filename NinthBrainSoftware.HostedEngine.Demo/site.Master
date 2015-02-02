@@ -50,7 +50,7 @@
             background: -o-linear-gradient(top, #51bbd2 0%, #2d97af 100%);
             background: -ms-linear-gradient(top, #51bbd2 0%, #2d97af 100%);
             background: linear-gradient(to bottom, #51bbd2 0%, #2d97af 100%);
-            margin-bottom:10px;            
+            margin-bottom: 10px;
         }
         #cssmenu > ul
         {
@@ -319,6 +319,13 @@
                         <li class='last'>
                             <asp:HyperLink ID="hypIndividualCertificationList" runat="server" NavigateUrl="~/IndividualCertificationList.aspx"
                                 Text="Individual Certification Management"></asp:HyperLink></li>
+                    </ul>
+                </li>
+                <li class='has-sub'><a href="#"><span>Education</span></a>
+                    <ul>
+                        <li class='last'>
+                            <asp:HyperLink ID="hypIndividualCourseList" runat="server" NavigateUrl="~/IndividualCourseList.aspx"
+                                Text="Individual Course List"></asp:HyperLink></li>
                     </ul>
                 </li>
             </ul>

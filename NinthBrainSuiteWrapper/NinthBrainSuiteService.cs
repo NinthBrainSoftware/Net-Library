@@ -43,6 +43,7 @@ namespace NinthBrainSoftware.HostedEngine.Client
         private JobTitleService jobTitleService = null;
         private LocaleService localeService = null;
         private WorkShiftService workShiftService = null;
+        private IndividualCourseService individualCourseService = null;
 
         #endregion
 
@@ -73,6 +74,7 @@ namespace NinthBrainSoftware.HostedEngine.Client
             jobTitleService = new JobTitleService(configuration, this);
             localeService = new LocaleService(configuration, this);
             workShiftService = new WorkShiftService(configuration, this);
+            individualCourseService = new IndividualCourseService(configuration, this);
         }
 
         #endregion
@@ -114,6 +116,11 @@ namespace NinthBrainSoftware.HostedEngine.Client
         public WorkShiftService WorkShiftService
         {
             get { return workShiftService; }
+        }
+
+        public IndividualCourseService IndividualCourseService
+        {
+            get { return individualCourseService;  }
         }
         #endregion
     }

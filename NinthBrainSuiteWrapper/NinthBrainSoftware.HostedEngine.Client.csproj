@@ -78,6 +78,7 @@
     <Compile Include="Components\Company\JobTitle.cs" />
     <Compile Include="Components\Company\Department.cs" />
     <Compile Include="Components\Component.cs" />
+    <Compile Include="Components\EducationTraining\IndividualCourse.cs" />
     <Compile Include="Components\Individuals\Address.cs" />
     <Compile Include="Components\Individuals\PhoneNumber.cs" />
     <Compile Include="Components\Individuals\Individual.cs" />
@@ -87,6 +88,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Services\CertificationService.cs" />
+    <Compile Include="Services\IndividualCourseService.cs" />
     <Compile Include="Services\WorkShiftService.cs" />
     <Compile Include="Services\LocaleService.cs" />
     <Compile Include="Services\JobTitleService.cs" />

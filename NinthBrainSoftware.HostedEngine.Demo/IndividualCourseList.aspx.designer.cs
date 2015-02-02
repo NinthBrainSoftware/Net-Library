@@ -10,78 +10,69 @@
 namespace NinthBrainSoftware.HostedEngine.Demo {
     
     
-    public partial class site {
+    public partial class IndividualCourseList {
         
         /// <summary>
-        /// head control.
+        /// messagePanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Panel messagePanel;
         
         /// <summary>
-        /// form1 control.
+        /// message control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Literal message;
         
         /// <summary>
-        /// hypIndividualList control.
+        /// startDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hypIndividualList;
+        protected global::System.Web.UI.WebControls.TextBox startDate;
         
         /// <summary>
-        /// hypIndividualSearch control.
+        /// endDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hypIndividualSearch;
+        protected global::System.Web.UI.WebControls.TextBox endDate;
         
         /// <summary>
-        /// hypCertificationList control.
+        /// btnFilter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hypCertificationList;
+        protected global::System.Web.UI.WebControls.Button btnFilter;
         
         /// <summary>
-        /// hypIndividualCertificationList control.
+        /// listwrapper control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hypIndividualCertificationList;
+        protected global::System.Web.UI.WebControls.Panel listwrapper;
         
         /// <summary>
-        /// hypIndividualCourseList control.
+        /// gvCourse control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hypIndividualCourseList;
-        
-        /// <summary>
-        /// ContentPlaceHolder1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.GridView gvCourse;
     }
 }

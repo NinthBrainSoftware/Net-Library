@@ -5,3 +5,4 @@ bin\
 /NinthBrainSoftware.HostedEngine.Demo/obj
 /*.suo
 /NinthBrainSoftware.HostedEngine.Demo/Web.config
+/NinthBrainSoftware.HostedEngine.Demo/NinthBrainSoftware.HostedEngine.Demo.Publish.xml

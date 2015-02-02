@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CertificationList.aspx" />
+    <Content Include="IndividualCourseList.aspx" />
     <Content Include="css\formee-structure.css" />
     <Content Include="css\formee-style.css" />
     <Content Include="css\typography.css" />
@@ -119,12 +120,6 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseForm.cs" />
@@ -134,6 +129,13 @@
     </Compile>
     <Compile Include="CertificationList.aspx.designer.cs">
       <DependentUpon>CertificationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IndividualCourseList.aspx.cs">
+      <DependentUpon>IndividualCourseList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IndividualCourseList.aspx.designer.cs">
+      <DependentUpon>IndividualCourseList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
