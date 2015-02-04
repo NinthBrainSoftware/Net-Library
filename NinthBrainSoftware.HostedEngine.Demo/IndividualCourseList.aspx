@@ -35,6 +35,11 @@
                 <asp:BoundField HeaderText="Course" DataField="CourseName" />
                 <asp:BoundField HeaderText="Start Date" DataField="StartDate" DataFormatString="{0:d}" />
                 <asp:BoundField HeaderText="End Date" DataField="EndDate" DataFormatString="{0:d}" />
+                <asp:BoundField HeaderText="Department" DataField="Department"  />
+                <asp:BoundField HeaderText="Job Title" DataField="JobTitle"  />
+                <asp:BoundField HeaderText="Locale" DataField="Locale"  />
+                <asp:BoundField HeaderText="Employee Number" DataField="EmployeeNumber"  />
+                <asp:BoundField HeaderText="Author Instructor" DataField="AuthorInstructor"  />
             </Columns>
         </asp:GridView>
     </asp:Panel>
