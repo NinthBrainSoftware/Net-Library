@@ -191,11 +191,13 @@ namespace NinthBrainSoftware.HostedEngine.Client.Util
             }
             catch (WebException e)
             {
-                if (e.Response != null)
-                {
-                    response = (HttpWebResponse)e.Response;
-                    urlResponse.IsError = true;
-                }
+                //if (e.Response != null)
+                //{
+                //    response = (HttpWebResponse)e.Response;
+                //    urlResponse.IsError = true;
+                //}
+                response = e.Response as HttpWebResponse;
+                urlResponse.IsError = true;
             }
             finally
             {
