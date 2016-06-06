@@ -26,6 +26,9 @@ namespace NinthBrainSoftware.HostedEngine.Client.Components.EducationTraining
         [DataMember(Name = "AuthorInstructor", EmitDefaultValue = false)]
         public string AuthorInstructor { get; set; }
 
+        [DataMember(Name = "Credit", EmitDefaultValue = false)]
+        public double Credit { get; set; }
+
         [DataMember(Name = "CourseDescription", EmitDefaultValue = false)]
         public string CourseDescription { get; set; } 
 

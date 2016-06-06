@@ -40,6 +40,7 @@
                 <asp:BoundField HeaderText="Locale" DataField="Locale"  />
                 <asp:BoundField HeaderText="Employee Number" DataField="EmployeeNumber"  />
                 <asp:BoundField HeaderText="Author Instructor" DataField="AuthorInstructor"  />
+                <asp:BoundField HeaderText="Credit" DataField="Credit"  />
             </Columns>
         </asp:GridView>
     </asp:Panel>

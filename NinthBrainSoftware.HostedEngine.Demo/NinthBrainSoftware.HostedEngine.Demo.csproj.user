@@ -3,6 +3,11 @@
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
     <UseIISExpress>false</UseIISExpress>
+    <NameOfLastUsedPublishProfile>Profile1</NameOfLastUsedPublishProfile>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
